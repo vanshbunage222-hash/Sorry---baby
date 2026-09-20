@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I'm Sorry, Baby ❤️</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:Georgia,"Times New Roman",serif;
+  color:#4b2635;background:linear-gradient(135deg,#fff5f8,#ffe8ef);
+  overflow-x:hidden
+}
+.page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px 18px;position:relative}
+.card{
+  width:min(720px,94vw);padding:42px 28px;border-radius:30px;
+  background:rgba(255,255,255,.78);backdrop-filter:blur(12px);
+  box-shadow:0 20px 60px rgba(105,35,65,.15);text-align:center;
+  border:1px solid rgba(255,255,255,.9)
+}
+.small{font-family:Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;font-size:12px;color:#a95b78}
+h1{font-size:clamp(42px,9vw,76px);margin:15px 0 10px;color:#9d3f61}
+h2{font-size:clamp(28px,6vw,42px);margin:8px 0 18px;color:#9d3f61}
+p{font-size:18px;line-height:1.8;margin:12px auto;max-width:600px}
+.heart{font-size:64px;animation:pulse 1.6s infinite}
+@keyframes pulse{50%{transform:scale(1.14)}}
+button{
+  border:0;border-radius:999px;padding:15px 24px;margin-top:22px;
+  background:#a94367;color:white;font-size:16px;cursor:pointer;
+  box-shadow:0 10px 25px rgba(169,67,103,.25)
+}
+button:hover{transform:translateY(-2px)}
+.hidden{display:none}
+.note{
+  margin-top:25px;padding:22px;border-radius:20px;background:#fff0f4;
+  font-size:18px;line-height:1.7
+}
+.reason{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;margin-top:25px
+}
+.box{padding:20px;border-radius:20px;background:#fff7f9}
+.box b{display:block;margin-bottom:8px;color:#9d3f61}
+footer{font-family:Arial,sans-serif;font-size:12px;opacity:.65;margin-top:25px}
+.float{
+  position:fixed;bottom:-30px;font-size:22px;opacity:.6;
+  animation:rise 8s linear infinite;pointer-events:none
+}
+@keyframes rise{to{transform:translateY(-110vh) rotate(20deg);opacity:0}}
+</style>
+</head>
+<body>
+
+<section class="page">
+  <div class="card">
+    <div class="heart">❤️</div>
+    <div class="small">A little website made only for you</div>
+    <h1>I'm Sorry, Baby</h1>
+    <p>
+      I know I got angry and spoke to you harshly. I shouldn't have let my anger
+      come between us, especially when you're someone so precious to me.
+    </p>
+    <button onclick="showNote()">Open my heart 💌</button>
+
+    <div id="note" class="hidden">
+      <div class="note">
+        Baby, I'm genuinely sorry. You didn't deserve my anger or the way I
+        spoke to you. Sometimes my feelings get too strong because I care about
+        you so much, but that's not an excuse to hurt you with my words.
+        <br><br>
+        I don't want you to remember me for one bad moment. I want to be the
+        person who makes you feel loved, respected, safe and cared for.
+        <br><br>
+        I love you more than I can properly put into words. ❤️
+        And I'm going to try to handle my anger better instead of taking it out
+        on you.
+        <br><br>
+        <strong>I'm sorry, my baby. Come back to my smile? 🫶</strong>
+      </div>
+
+      <div class="reason">
+        <div class="box"><b>I'm sorry</b>for raising my voice and letting anger speak.</div>
+        <div class="box"><b>I understand</b>that your feelings matter too.</div>
+        <div class="box"><b>I promise</b>to work on how I communicate when I'm upset.</div>
+      </div>
+
+      <button onclick="document.getElementById('promise').scrollIntoView({behavior:'smooth'})">
+        One more thing ❤️
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="promise">
+  <div class="card">
+    <div class="small">My promise to you</div>
+    <h2>I don't want perfect moments.</h2>
+    <p>
+      I want real moments with you — where we talk, understand each other,
+      forgive each other and grow together.
+    </p>
+    <p>
+      When I'm angry, I'll try to pause. When you're upset, I'll listen.
+      And when something goes wrong, I'll choose communication over anger.
+    </p>
+    <div class="heart">🫶</div>
+    <h2>I'm sorry, Baby.</h2>
+    <p>Thank you for being you. ❤️</p>
+    <footer>Made with love • Just for you</footer>
+  </div>
+</section>
+
+<script>
+function showNote(){
+  document.getElementById('note').classList.remove('hidden');
+  for(let i=0;i<14;i++){
+    const h=document.createElement('div');
+    h.className='float';
+    h.textContent=['❤️','💗','💕','💖','🌸'][Math.floor(Math.random()*5)];
+    h.style.left=Math.random()*100+'vw';
+    h.style.animationDelay=(Math.random()*2)+'s';
+    h.style.animationDuration=(6+Math.random()*5)+'s';
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),12000);
+  }
+}
+</script>
+</body>
+</html>
